@@ -43,6 +43,29 @@ let cars = ["BMW","Jaguar","Mercedes","Hyundai","Maruti"];
 
 // slice() on array -> copy of part / slice of the array 
 // first parameter is starting index and second parameter is ending index
-let slicedCars = cars.slice(1,3); // ending index is exclusive
-console.log(slicedCars);
-console.log(cars);
+// let slicedCars = cars.slice(1,3); // ending index is exclusive
+// console.log(slicedCars);
+// console.log(cars);
+
+// splice() on array -> generic delete function
+// takes two parameters -> starting index and length or delete count
+// let splicedCars = cars.splice(2,2); // deletes 2 elements starting from 2nd index
+// let splicedCars = cars.splice(2,1); // deletes only the element at 2nd index
+
+// console.log(splicedCars);
+// console.log(cars); // changes of splice are refelcted on the array
+
+//Question -> union of two arrays without using any extra space
+let arr1 = [1,4,3,6,5];
+let arr2 = [1,3,100,200];
+
+for(let i = 0; i < arr1.length; i++)
+{
+    if(!arr2.includes(arr1[i]))
+    {
+        arr2.push(arr1[i]);
+    }
+}
+
+console.log(arr2);
+
