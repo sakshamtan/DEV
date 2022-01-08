@@ -38,7 +38,7 @@ function fn2()
     console.log("I am fn2");
 }
 
-fn1(fn2); // fn2 passed as a variable
+// fn1(fn2); // fn2 passed as a variable
 
 // function add(a, b)
 // {
