@@ -7,7 +7,7 @@
 // console.log(arr);
 
 // Array Methods
-let cars = ["BMW","Jaguar","Mercedes"];
+let cars = ["BMW","Jaguar","Mercedes","Hyundai","Maruti"];
 // console.log(cars);
 
 // Replace an element in an array
@@ -33,10 +33,16 @@ let cars = ["BMW","Jaguar","Mercedes"];
 // console.log(cars);
 
 // shift() -> It removes element from the starting of the array
-let shiftedCar = cars.shift();
-console.log(shiftedCar);
-console.log(cars);
+// let shiftedCar = cars.shift();
+// console.log(shiftedCar);
+// console.log(cars);
 
 // unshift() -> It adds an element at the start of the array and shifts the other elements(without replacing 0 index)
-cars.unshift('alto');
+// cars.unshift('alto');
+// console.log(cars);
+
+// slice() on array -> copy of part / slice of the array 
+// first parameter is starting index and second parameter is ending index
+let slicedCars = cars.slice(1,3); // ending index is exclusive
+console.log(slicedCars);
 console.log(cars);
