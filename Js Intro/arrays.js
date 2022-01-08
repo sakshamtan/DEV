@@ -69,3 +69,6 @@ for(let i = 0; i < arr1.length; i++)
 
 console.log(arr2);
 
+// array.includes(ele) -> true if present in array else false
+// array.indexOf(ele) -> returns index of ele if present in array else returns -1
+
