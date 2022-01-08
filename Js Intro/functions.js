@@ -1,17 +1,35 @@
 // functions expects arguments
 
-// function sayHi()
-// {
-//     console.log("Hii");
-// }
+function sayHi(name)
+{
+    console.log("My Name is", name);
+}
 
-// sayHi();  // function call
-// sayHi();
+// sayHi("Saksham");  // function call
+
+// Dynamic behaviour of js
+// sayHi(10);
+
+let array = [10,20,30,40];
+
+let obj = {firstName : "Saksham"};
+
+function anotherFunction()
+{
+    console.log("I am another Function");
+}
+
+sayHi(array);
+
+sayHi(obj);
+
+// Function is also a variable
+sayHi(anotherFunction)
 
 // function add(a, b)
 // {
 //     // console.log(a + b);
-//     return a + b;
+//     return a + b;  // anything can be returned
 // }
 
 // let sum = add(2,5);  // function call
