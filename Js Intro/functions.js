@@ -7,7 +7,7 @@ function sayHi(name)
 
 // sayHi("Saksham");  // function call
 
-// Dynamic behaviour of js
+// Dynamic behaviour of js -> Data type doesnt matter
 // sayHi(10);
 
 let array = [10,20,30,40];
@@ -19,12 +19,26 @@ function anotherFunction()
     console.log("I am another Function");
 }
 
-sayHi(array);
+// sayHi(array);
 
-sayHi(obj);
+// sayHi(obj);
 
-// Function is also a variable
-sayHi(anotherFunction)
+// Function is also a variable -> Function definition of anotherFunction is passed into sayHi function (address)
+// sayHi(anotherFunction);
+
+// Function as a reference type variable ->
+function fn1(name)
+{
+    console.log("Hello", name, "from fn1");
+    name(); // fn2 invoked as it's reference was passed on name variable
+}
+
+function fn2()
+{
+    console.log("I am fn2");
+}
+
+fn1(fn2); // fn2 passed as a variable
 
 // function add(a, b)
 // {
