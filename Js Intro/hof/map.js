@@ -143,11 +143,10 @@ const watchList = [
 
 function extractTitleAndRatings(movieObj)
 {
-    let smallObj = {
+    return {    // returned a new small object
         "title" : movieObj["Title"],
         "rating" : movieObj["imdbRating"]
     }
-    return smallObj;
 }
 
 let newArr = watchList.map(extractTitleAndRatings);
