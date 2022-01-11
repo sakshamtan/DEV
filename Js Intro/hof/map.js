@@ -6,12 +6,12 @@ let arr = [1,2,3,4,5];
 
 function sqaurer(x)
 {
-    return x * x;
+  return x * x;
 }
 
 function cuber(x)
 {
-    return x * x * x;
+  return x * x * x;
 }
 
 // for(let i = 0; i < arr.length; i++)
@@ -22,12 +22,12 @@ function cuber(x)
 
 // Upar ka saara kaam ek line mei map function se ho skta hai
 let squaredArr = arr.map(sqaurer); // squarer function poore array mei apply ho jaayega
-console.log("squared array:", squaredArr);
+// console.log("squared array:", squaredArr);
 
 let cubedArr = arr.map(cuber);
-console.log("cubed array:", cubedArr);
+// console.log("cubed array:", cubedArr);
 
-// Map question (freecodecamp) -> Extract title and imdb rating from watchList array using map function
+// Map question_01 (freecodecamp) -> Extract title and imdb rating from watchList array using map function
 const watchList = [
     {
       "Title": "Inception",
@@ -150,4 +150,55 @@ function extractTitleAndRatings(movieObj)
 }
 
 let newArr = watchList.map(extractTitleAndRatings);
-console.log(newArr);
+// console.log(newArr);
+
+// Map question_02 -> Given an array of names return an array of just the initials
+let namesArr = ["Saksham Taneja","Ranbhir Kapoor","Salman Khan","Vicky Kaushal"]; 
+// We have to return ['ST','RK','SK','VK']
+
+function extractInitials(name) // name mei arr[0],arr[1]....arr[n] pass hoga when applying map function
+{
+  let names = name.split(" "); // "Saksham Taneja" -> ["Saksham","Taneja"]
+  let firstName = names[0];
+  let lastName = names[1];
+
+  return firstName.charAt(0) + lastName.charAt(0);
+
+}
+
+let initialsArr = namesArr.map(extractInitials);
+// console.log(initialsArr);
+
+// Map Question_03 -> for all incomes < 100 double their income in the array of objects
+let member = [
+  { g : "M", age : 20, income : 70 },
+  { g : "F", age : 25, income : 110},
+  { g : "M", age : 30, income : 250},
+  { g : "F", age : 18, income : 55}
+];
+
+function doubleIncome(memberObj)
+{
+  if(memberObj.income < 100)
+    memberObj.income *= 2;
+  
+  return memberObj; // returning the result is necessary in the function that is to be mapped otherwise undefined aayega output mei
+}
+
+// let newMember = member.map(doubleIncome);
+// console.log(member); // Note that here original array is changed as well because we passes obj into doubleIncome function and obj passes reference so vahi jaakr change hogya.
+// console.log(newMember);
+
+//To avoid changing the original array (data) we will create a copy of object in doubleIncome function and then perform changes in it and the return it.
+function doubleIncome_02(memberObj)
+{
+  let newObj = {...memberObj}; // memberObj newObj mei copy ho jaata hai (syntactical sugar)
+  if(newObj.income < 100)
+  newObj.income *= 2;
+
+  return newObj;
+}
+
+console.log(member); // Now the original data is not changed
+let newMember_02 = member.map(doubleIncome_02);
+console.log(newMember_02);
