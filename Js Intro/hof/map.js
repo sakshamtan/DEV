@@ -192,7 +192,16 @@ function doubleIncome(memberObj)
 //To avoid changing the original array (data) we will create a copy of object in doubleIncome function and then perform changes in it and the return it.
 function doubleIncome_02(memberObj)
 {
+  //option 1 -> To create a copy of original object
+  // let newObj = {};
+  // for(let key in memberObj)
+  // {
+  //   newObj[key] = memberObj[key];
+  // }
+
+  //option 2 -> Syntactical sugar to create a copy of orignal object
   let newObj = {...memberObj}; // memberObj newObj mei copy ho jaata hai (syntactical sugar)
+
   if(newObj.income < 100)
   newObj.income *= 2;
 
