@@ -48,7 +48,7 @@ let cars = ["BMW","Jaguar","Mercedes","Hyundai","Maruti"];
 // console.log(cars);
 
 // splice() on array -> generic delete function
-// takes two parameters -> starting index and length or delete count
+// takes two parameters -> starting index and delete count
 // let splicedCars = cars.splice(2,2); // deletes 2 elements starting from 2nd index
 // let splicedCars = cars.splice(2,1); // deletes only the element at 2nd index
 
@@ -71,4 +71,29 @@ console.log(arr2);
 
 // array.includes(ele) -> true if present in array else false
 // array.indexOf(ele) -> returns index of ele if present in array else returns -1
+
+// Question -> remove primes without using extra space
+let arr = [5,7,19,12,13,14];
+function isPrime(number)
+{
+    let isPrimeFlag = true;
+    for(let i = 2; i  < number; i++)
+    {
+        if(number % i == 0)
+        {
+            isPrimeFlag = false;
+            break;
+        }
+    }
+    return isPrimeFlag;
+}
+
+// array mei jab bhi remove krna hai to peeche se loop lgaaenge to avoid shifting
+for(let i = arr.length-1; i >= 0; i--)
+{
+    if(isPrime(arr[i]))
+    arr.splice(i,1);
+}
+
+console.log(arr);
 
