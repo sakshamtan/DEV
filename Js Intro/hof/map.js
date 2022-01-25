@@ -186,7 +186,7 @@ function doubleIncome(memberObj)
 }
 
 // let newMember = member.map(doubleIncome);
-// console.log(member); // Note that here original array is changed as well because we passes obj into doubleIncome function and obj passes reference so vahi jaakr change hogya.
+// console.log(member); // Note that here original array is changed as well because we passed obj into doubleIncome function and obj passes reference so vahi jaakr change hogya.
 // console.log(newMember);
 
 //To avoid changing the original array (data) we will create a copy of object in doubleIncome function and then perform changes in it and the return it.
