@@ -149,8 +149,11 @@ function extractTitleAndRatings(watchListObj)
   return obj;
 }
 
-let newArr = watchList.filter(filterRatings);
-let newFilteredMappedArr = newArr.map(extractTitleAndRatings);
+// let newArr = watchList.filter(filterRatings);
+// let newFilteredMappedArr = newArr.map(extractTitleAndRatings);
+
+// Chaining -> Applying multiple functions in a single line
+let newFilteredMappedArr = watchList.filter(filterRatings).map(extractTitleAndRatings);
 
 // console.log("WatchList", watchList.length);
 // console.log("newArr", newArr.length);
