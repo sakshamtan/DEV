@@ -7,6 +7,17 @@ function sayHi(name)
 
 // sayHi("Saksham");  // function call
 
+// Not calling function -> function ka address (but as js is dynamic language name of function will only be printed)
+// console.log(sayHi);
+// this proves that functions treated as variables(data types) and they are created on heap.
+
+// If you dont pass anything to the function then parameter passed to function is 'undefined'
+// And if the function doesnt returns anything and you try to print it then it is also 'undefined'
+// Unlike java, javascript doesnt throw null pointers exceptions in these cases.
+// sayHi();
+// let rv = sayHi("Saksham");
+// console.log(rv);
+
 // Dynamic behaviour of js -> Data type doesnt matter
 // sayHi(10);
 
