@@ -1,5 +1,9 @@
 // Predict the output ->
 
+// Memory allocation for the functions are done before the code is executed
+// Functions are created in heap and there addresses are stored in stack
+// There is no function overloading in javascript
+
 console.log("Script Started");
 iamReal();
 
