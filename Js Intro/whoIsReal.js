@@ -25,5 +25,5 @@ iamReal();
 
 // Note -> Compiler first allocates memory for the functions and then runs the codes of script line by line
 // So iamReal function ki memory pehle allocate hogyi and then vo function update bhi hogya 2nd function se
-// So iamReal() updated function hi call krega har baar
+// So iamReal() updated function (2nd function) hi call krega har baar
 

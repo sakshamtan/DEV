@@ -4,8 +4,21 @@
 // 2) Execution of code line by line
 // By default we have global execution context which works for the global code written
 
-console.log("Before declaration", a);
+// Global Execution Context ->
+// console.log("Before declaration", a);
 var a;
-console.log("After declaration", a);
+// console.log("After declaration", a);
 a = 10;
-console.log("After Initialization", a);
+// console.log("After Initialization", a);
+
+// Functional Execution Context -> A new execution context fires when a function is called
+function fn()
+{
+    console.log("Before declaration", a);
+    var a;
+    console.log("After declaration", a);
+    a = 20;
+    console.log("After Initialization", a);
+}
+
+fn();
