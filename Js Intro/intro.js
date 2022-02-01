@@ -74,7 +74,7 @@
    
 // console.log(c);
 
-//Let is blocked scope
+// Let is blocked scope
 
 // let
 
@@ -86,34 +86,34 @@
 // let a = 2;
 // a = 3; // allowed reassinging
 
-//const a=2;
-//console.log(a);  doesnt allows reassigning
+// const a = 2;
+// console.log(a);  doesnt allows reassigning
 
 
-//Strings and string methods--
+// Strings and string methods--
 
 let str = 'pepcoders';
 console.log(str);
 
 // string Methods -
 // .length
-//console.log(str.length);
+// console.log(str.length);
 
-//extracting a part of string - slice , substr
-//slice(start , end) - returns sliced array from starting index to ending-1
+// extracting a part of string - slice , substr
+// slice(start , end) - returns sliced array from starting index to ending-1
 
 // let slicedStr = str.slice(3 ,7); // last index is excluded
 // console.log(slicedStr);
 
-//substr method
-//substr(start , length) - staring and the length of the word
+// substr method
+// substr(start , length) - staring and the length of the word
 
 // let subString = str.substr(3 , 4 );
 // console.log(subString);
 
 
-// //replace method - expects the word to be replaced as first argument and the replacemnetg as
-//  second argument 
+// replace method - expects the word to be replaced as first argument and the replacemnetg as
+// second argument 
 
 // let sayHello = 'Hello Mukesh';
 // console.log(sayHello); // hello Mukesh
