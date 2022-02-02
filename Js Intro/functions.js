@@ -78,3 +78,17 @@ let add = (function(a,b) {
 })(10,20) // arguments saath saath pass krdiye
 
 // console.log(add);
+
+// We can return a function from a function as well (functions can be treated as data types / variables)
+function outer()
+{
+    console.log("I am outer function and I am returning inner function");
+    return function inner()
+    {
+        console.log("I am inner function");
+    }
+}
+
+let rval = outer();
+console.log(rval);
+rval(); // address of inner() is copied into rval.
