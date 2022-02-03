@@ -38,5 +38,5 @@ obj.fun.apply(obj2, ["Mehwish", "Shailja", "Supriya"]);
 
 // 3) Bind is not similar to call and apply as it creates a new function
 let bindFunction = obj.fun.bind(obj2, "Mehwish", "Shailja");
-bindFunction();
+// bindFunction();
 bindFunction("Sumeet"); // Aise sumeet bhi ek additional parameter pass hogya
