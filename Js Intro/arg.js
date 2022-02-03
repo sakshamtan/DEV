@@ -14,7 +14,7 @@ function fn(param1, param2)
 // This also works fine as js is dynamic in nature
 // fn("Hello", "Hi", "Bye");
 
-// arguments array -> parameters passed to the function is stored inside arguments array
+// arguments(Array like) -> parameters passed to the function is stored inside arguments array
 function fn(param1, param2)
 {
     console.log(arguments);
