@@ -43,7 +43,7 @@ Function.prototype.myApply = function()
     let orgFun = this;
     let args = Array.from(arguments);
     let thisForOrgFun = args[0];
-    let params = args[1];
+    let params = args[1];  // now args only contains two elements
 
     thisForOrgFun.fun = orgFun;
     thisForOrgFun.fun(...params);
