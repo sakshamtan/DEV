@@ -1,4 +1,5 @@
 
+// myBind()
 Function.prototype.myBind = function()
 {
     let orgFun = this; // original function on which myBind was called
@@ -14,6 +15,40 @@ Function.prototype.myBind = function()
         orgFun.apply(thisForOrgFun, argsForOrgFun);
     }
     return boundFun;
+}
+
+// myCall()
+Function.prototype.myCall = function()
+{
+    let orgFun = this;
+    let args = Array.from(arguments);
+    let thisForOrgFun = args[0];
+    let params = args.slice(1);
+
+    // orgFun.apply(thisForOrgFun,params);
+
+    // Without using apply ->
+
+    thisForOrgFun.fun = orgFun;    // object mei function hi add krdia
+    thisForOrgFun.fun(...params);  // ... -> array ko comma separated values mei convert kr deta hai
+    delete thisForOrgFun.fun;      // added function delete bhi krna pdega so object mei change naa aaye
+}
+
+// arr = [10, 20, 30, 40, 50]
+// ...arr = 10, 20, 30, 40, 50  triple dots convert array into comma separated values
+
+// myApply()
+Function.prototype.myApply = function()
+{
+    let orgFun = this;
+    let args = Array.from(arguments);
+    let thisForOrgFun = args[0];
+    let params = args[1];
+
+    thisForOrgFun.fun = orgFun;
+    thisForOrgFun.fun(...params);
+    delete thisForOrgFun.fun;
+
 }
 
 let obj = {
@@ -36,4 +71,8 @@ let obj2 = {
 
 let bindFunction = obj.fun.myBind(obj2, "Mehwish", "Shailja");
 // bindFunction();
-bindFunction("Sumeet");
+// bindFunction("Sumeet");
+
+// obj.fun.myCall(obj2, "Mehwish", "Shailja", "Sumeet");
+
+obj.fun.myApply(obj2, ["Mehwish", "Shailja", "Sumeet"]);
