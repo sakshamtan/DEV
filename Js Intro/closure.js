@@ -85,3 +85,43 @@ arr_02[0](); // 0 -> because j har baar naya bana and function bhi naya bna har 
 arr_02[1](); // 1    so j ki value saath saath pass hogyi through closure
 arr_02[2](); // 2
 console.log("After calling fun");
+
+// Question ->
+
+// function powerCreator(exp)
+// {
+//     let fun = function(base)
+//     {
+//         return Math.pow(base, exp);
+//     }
+
+//     return fun;
+// }
+
+// let squarer = powerCreator(2);
+// let val = squarer(8);
+// console.log(val);
+
+// Change powerCreator to make it a producer of such functions whose exponenent we can change on a later stage.
+
+function powerCreator(obj)
+{
+    let fun = function(base)
+    {
+        return Math.pow(base, obj.exp);
+    }
+
+    return fun;
+}
+
+let obj = {
+    exp: 2
+};
+
+let squarer = powerCreator(2);
+let val = squarer(8);
+console.log(val);
+
+obj.exp = 3;
+let val2 = squarer(8); // sqaurer is now cuber
+console.log(val2);
