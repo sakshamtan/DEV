@@ -118,7 +118,7 @@ let obj = {
     exp: 2
 };
 
-let squarer = powerCreator(2);
+let squarer = powerCreator(obj);
 let val = squarer(8);
 console.log(val);
 
