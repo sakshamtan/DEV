@@ -108,7 +108,7 @@ function powerCreator(obj)
 {
     let fun = function(base)
     {
-        return Math.pow(base, obj.exp);
+        return Math.pow(base, obj.exp); // poora obj closure se pass hoga (obj ka address pass hoga as closure)
     }
 
     return fun;
