@@ -71,8 +71,48 @@ function logAllNonPrimes(num)
 
 let arr2 = [
     "My name is Sumeet Malik. I am a teacher. I teach programming.",
-    "",
-    "",
-    "",
-    ""
+    "India won in Australia but England won't.",
+    "My name is Saksham Taneja.",
+    "India went to South Africa. India started well but it rains",
 ];
+
+Array.prototype.processStrings = function(shortStringCB, longStringCB, criteria)
+{
+    let oarr = this;
+    for(let i = 0; i < oarr.length; i++)
+    {
+        let str = oarr[i];
+        if(str.length >= criteria)
+        longStringCB(str);
+        else
+        shortStringCB(str);
+    }
+
+    return this; // for chaining like processStrings().map().filter() etc.
+}
+
+function handleShortStrings(str)
+{
+    let res1 = str.split(".");  // strings se array bnaya splitted on '.'
+    let res2 = res1.filter(s => s.length > 0); // 0 length ki strings remove krdi from array
+    let res3 = res2.map(s => s.trim());  // saari strings inside array trim krdi
+    let res4 = res3.map(s => s.split(" ")); // array ke har ele ko spit krdia to form 2D array
+    let res5 = res4.map(a => a.reverse()); // now reversing each array inside 2D array
+    let res6 = res5.map(a => a.join(" ")); // join is opposite to split -> converts array to string (" ") here with space in between each element
+    let res7 = res6.join(". ");  // Now joining each array with full stops to form sentences again
+    let res8 = res7 + "."; // last mei full stop nhi aata to add krdia
+    console.log("Short String = " + res8);
+}
+
+function handleLongStrings(str)
+{
+    let res1 = str.split(".");
+    let res2 = res1.filter(s => s.length > 0);
+    let res3 = res2.map(s => s.trim());
+    let res4 = res3.reverse();
+    let res5 = res4.join(". ");
+    let res6 = res5 + ".";
+    console.log("Long String = " + res6);
+}
+
+arr2.processStrings(handleShortStrings, handleLongStrings, 40);
