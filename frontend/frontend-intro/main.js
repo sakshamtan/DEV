@@ -8,7 +8,7 @@
     });
 
     btn.addEventListener("mouseover", function(){
-        h1.style.color = "black";
+        h1.style.color = "blue";
     });
 
     btn.addEventListener("mouseout", function(){
